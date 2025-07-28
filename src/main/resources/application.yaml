@@ -1,9 +1,27 @@
 spring:
   application:
-    name: demo
+    name: user-points-service
 
-# define mysql properties here
+  # define mysql properties here
+  datasource:
+    url: jdbc:mysql://localhost:3306/taskdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: taskuser
+    password: taskpass
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
 # define redis properties here
+redis:
+  host: localhost
+  port: 6379
+cache:
+  type: redis
 
 # define rocketmq properties here
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    group: user-points-producer-group
