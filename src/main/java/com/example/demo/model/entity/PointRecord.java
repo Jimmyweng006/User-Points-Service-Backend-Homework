@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "point_records")
+@Table(name = "point_records", indexes = @Index(name = "idx_user_id", columnList = "user_id"))
 public class PointRecord {
 
     @Id
